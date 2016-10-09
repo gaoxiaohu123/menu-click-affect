@@ -1,0 +1,134 @@
+.menu_one .menu {
+    line-height: 60px;
+}
+
+.menu_one .menu-spin {
+    width: 60px;
+    height: 24px;
+    padding: 0 0 0 0;
+    display: inline-block;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    text-align: center;
+    z-index: 10;
+}
+
+.menu_one .menu-box {
+    height: 100%;
+    width: 24px;
+    display: inline-block;
+    position: relative;
+}
+.menu_one .menu-inner, .menu_one .menu-inner:before, .menu_one .menu-inner:after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    transition: transform 0.15s ease;
+}
+.menu_one .menu-inner {
+    background-color: #fff;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    transition: transform 0.15s ease;
+    top: 50%;
+    margin-top: -6px;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.menu_one .menu-inner:before {
+    top: -6px;
+    transition: top .1s .34s ease-in,opacity .1s ease-in,background-color .15s ease;
+}
+
+.menu_one .menu-inner:after {
+    bottom: -6px;
+    transition: bottom 0.1s ease-in 0.34s, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19), background-color 0.15s ease;
+}
+
+.menu_one .menu-spin.is-active .menu-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.14s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.menu_one .menu-spin.is-active .menu-inner:before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out, background-color 0.15s ease;
+}
+.menu_one .menu-spin.is-active .menu-inner:after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.15s ease;
+}
+
+.menu_two .menu {
+    color: #fff;
+    width: 39px;
+    height: 44px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.menu_two .menu span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 24px;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+
+.menu_two .menu span:nth-child(1) {
+    top: 0px;
+}
+.menu_two .menu span:nth-child(2), .menu_two .menu span:nth-child(3) {
+    top: 6px;
+}
+.menu_two .menu span:nth-child(4) {
+    top: 12px;
+}
+
+.menu_two .menu.is-active span:nth-child(1) {
+    top: 0px;
+    width: 0%;
+    left: 50%;
+}
+.menu_two .menu.is-active span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.menu_two .menu.is-active span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.menu_two .menu.is-active span:nth-child(4) {
+    top: 12px;
+    width: 0%;
+    right: 50%;
+}
